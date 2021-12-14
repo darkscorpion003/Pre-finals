@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Calculator</title>
+</head>
+<body>
+    <div class="content" style="background-color: #283747;">
+        <div class="calcuContent" style="box-shadow: 4px 4px 25px #303030;">
+            <h1>MY SIMPLE CALCULATOR</h1>
+            <form action="" name="formCalculator">
+                <span style="color: white; font-family: Yu Gothic; font-size: 16pt; margin-left: 50px;">Enter First Number: </span><input type="text" name="firstNumber" style="height: 40px; margin-left: 28px; font-size: 16pt; width: 150px; text-align: center; border-radius: 5px;">
+                <br>
+                <br>
+                <span style="color: white; font-family: Yu Gothic; font-size: 16pt; margin-left: 50px;">Enter Second Number: </span><input type="text" name="secondNumber" style="height: 40px; font-size: 16pt; width: 150px; text-align: center; border-radius: 5px;">
+                <br>
+                <br>
+                <span style="color: white; font-family: Yu Gothic; font-size: 16pt; margin-left: 50px;">Result: </span><input type="text" name="resultNumber" disabled="disabled" style="height: 40px; margin-left: 154px; font-size: 16pt; width: 150px; text-align: center; border-radius: 5px; color: white;">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <br>
+                <input type="button" value="SUM" class="button" onclick="sumValues()" style="height: 45px; width: 80px; font-family: Yu Gothic; font-size: 16pt; margin-left: 38px; cursor: pointer; border-radius: 10px;">
+                <input type="button" value="DIFFERENCE" class="button" onclick="diffValues()" style="height: 40px; width: 150px; font-family: Yu Gothic; font-size: 16pt; margin-left: 30px; cursor: pointer; border-radius: 10px;">
+                <input type="button" value="PRODUCT" class="button" onclick="proValues()" style="height: 40px; width: 130px; font-family: Yu Gothic; font-size: 16pt; margin-left: 30px; cursor: pointer; border-radius: 10px;">
+                <br>
+                <br>
+                <br>
+                <input type="button" value="QUOTIENT" class="button" onclick="quoValues()" style="height: 40px; width: 130px; font-family: Yu Gothic; font-size: 16pt; margin-left: 100px; cursor: pointer; border-radius: 10px;">
+                <input type="button" value="CLEAR" class="button" onclick="clearValues()" style="height: 40px; width: 100px; font-family: Yu Gothic; font-size: 16pt; margin-left: 50px; cursor: pointer; border-radius: 10px;">
+                <br>
+                <br>
+                <div class="alert" style="font-family: Yu Gothic; font-size: 10pt;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';" style="margin-top: -8px;">&times;</span>
+                  Programmed by Matthew Sison
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function sumValues(){
+            var num1, num2, res;
+            num1 = Number(document.formCalculator.firstNumber.value);
+            num2 = Number(document.formCalculator.secondNumber.value);
+            res = num1 + num2;
+
+            document.formCalculator.resultNumber.value=res;
+        }
+
+        function diffValues(){
+            var num1, num2, res;
+            num1 = Number(document.formCalculator.firstNumber.value);
+            num2 = Number(document.formCalculator.secondNumber.value);
+            res = num1 - num2;
+
+            document.formCalculator.resultNumber.value=res;
+        }
+
+        function proValues(){
+            var num1, num2, res;
+            num1 = Number(document.formCalculator.firstNumber.value);
+            num2 = Number(document.formCalculator.secondNumber.value);
+            res = num1 * num2;
+
+            document.formCalculator.resultNumber.value=res;
+        }
+
+        function quoValues(){
+            var num1, num2, res;
+            num1 = Number(document.formCalculator.firstNumber.value);
+            num2 = Number(document.formCalculator.secondNumber.value);
+            res = num1 / num2;
+
+            document.formCalculator.resultNumber.value=res;
+        }
+
+        function clearValues(){
+            document.formCalculator.firstNumber.value="";
+            document.formCalculator.secondNumber.value="";
+            document.formCalculator.resultNumber.value="";
+        }
+
+
+    </script>
+
+    <style>
+        body{
+            top: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .button {
+          transition-duration: 0.4s;
+        }
+
+        .button:hover {
+          background-color: #5194DC;
+          color: white;
+        }
+        .content{
+            width: 1920px;
+            height: 1080px;
+            background-image: url(background.jpg);
+            align-self: center;
+            background-repeat: no-repeat;
+            background-size: 100% 110%;
+            background-position: top center;
+            background-attachment: fixed;
+        }
+        .content .calcuContent{
+            position: absolute;
+            left: 37%;
+            top: 30%;
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 500px;
+            width: 500px;
+            border-radius: 5px;
+            backdrop-filter: blur(15px);
+        }
+        .content .calcuContent h1{
+            text-align: center;
+            color: #fff9f9;
+            font-family: Muli, sans-serif;
+            font-weight: 800;
+        }
+        .alert {
+          padding: 20px;
+          background-color: black;
+          color: white;
+          margin-bottom: 15px;
+          box-shadow: 10px;
+          border-radius: 4px;
+          height: 6px;
+        }
+        .closebtn {
+          margin-left: 15px;
+          color: white;
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .closebtn:hover {
+          color: black;
+        }
+    </style>
+
+    
+</body>
+</html>
